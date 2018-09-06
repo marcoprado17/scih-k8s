@@ -5,10 +5,10 @@ metadata:
 spec:
   selector:
     app: gps-service
-  type: NodePort
+  type: ClusterIp
   ports:
-  - port: 80
-    targetPort: 8080
+    - port: 80
+      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
