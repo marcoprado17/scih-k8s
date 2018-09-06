@@ -3,6 +3,8 @@ steps:
   args: [
     'apply', 
     '-f', 'ui-service.yaml', 
+    '-f', 'gps-service.yaml',
+    '-f', 'api-gateway.yaml',
     '-f', 'ingress.yaml'
   ]
   env:
