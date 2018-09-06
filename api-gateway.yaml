@@ -7,7 +7,8 @@ spec:
     app: api-gateway
   type: NodePort
   ports:
-    - targetPort: 3000
+  - port: 80
+    targetPort: 3000
 ---
 apiVersion: apps/v1
 kind: Deployment
