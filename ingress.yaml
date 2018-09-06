@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: ingress
 spec:
-  backend:
-    serviceName: ui-service
-    servicePort: 80
+  rules:
+    - http:
+        paths:
+          - path: /api
+            backend:
+              serviceName: api-gateway
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: ui-service
