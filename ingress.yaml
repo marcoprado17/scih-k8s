@@ -6,13 +6,13 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api
-            backend:
-              serviceName: api-gateway
-              servicePort: 80
-    - http:
-        paths:
           - path: /
             backend:
               serviceName: ui-service
+              servicePort: 80
+    - http:
+        paths:
+          - path: /api
+            backend:
+              serviceName: api-gateway
               servicePort: 80
