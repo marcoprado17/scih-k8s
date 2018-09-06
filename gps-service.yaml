@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gps-service
+spec:
+  selector:
+    app: gps-service
+  type: NodePort
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gps-service
+  labels:
+    app: gps-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gps-service
+  template:
+    metadata:
+      labels:
+        app: gps-service
+    spec:
+      containers:
+      - name: gps-service
+        image: gcr.io/smart-car-insurance-hybrid/gps-service:latest
+        ports:
+        - containerPort: 8080
